@@ -1,4 +1,5 @@
-import { makeStyles, TextField, Typography } from "@material-ui/core";
+import { TextField, Typography } from "@mui/material";
+import { makeStyles } from "@mui/styles";
 import React, { useState } from "react";
 import { ErrorMessages } from "../../constants";
 
@@ -13,7 +14,7 @@ interface TextProps {
   validateOnFocusOut: boolean;
 }
 
-const useStyles = makeStyles(() => ({
+const useStyles: any = makeStyles(() => ({
   wrapper: {
     display: "flex",
     flexDirection: "column",
@@ -23,33 +24,33 @@ const useStyles = makeStyles(() => ({
   errMsgStyles: {
     fontSize: "12px",
     color: "red",
-},
+  },
   errWrapper: {
-    '& .MuiTextField-root label': {
-        color: 'red'
+    "& .MuiTextField-root label": {
+      color: "red",
     },
-      '& .MuiOutlinedInput-root': {
-        '& fieldset': {
-            borderColor: 'red',
-      }
+    "& .MuiOutlinedInput-root": {
+      "& fieldset": {
+        borderColor: "red",
       },
-      '& .MuiInput-underline:before': {
-        borderColor: 'red',
+    },
+    "& .MuiInput-underline:before": {
+      borderColor: "red",
+    },
+    "& .MuiInputBase-root:hover": {
+      "& .MuiOutlinedInput-notchedOutline": {
+        borderColor: "red",
       },
-      '& .MuiInputBase-root:hover': {
-          '& .MuiOutlinedInput-notchedOutline': {
-            borderColor: 'red',
-          }
-      },
-      '& .MuiInput-underline:hover:not(.Mui-disabled):before': {
-        borderColor: 'red',
-      },
-      '& .MuiFilledInput-underline:before': {
-        borderColor: 'red',
-      },
-      '& .MuiFilledInput-underline:hover:before': {
-        borderColor: 'red',
-      }
+    },
+    "& .MuiInput-underline:hover:not(.Mui-disabled):before": {
+      borderColor: "red",
+    },
+    "& .MuiFilledInput-underline:before": {
+      borderColor: "red",
+    },
+    "& .MuiFilledInput-underline:hover:before": {
+      borderColor: "red",
+    },
   },
 }));
 
@@ -93,7 +94,10 @@ export const InputText = (props: TextProps) => {
     }
   };
   return (
-    <Typography component={"div"} className={`${classes.wrapper} ${errMsg ? classes.errWrapper : ''}`}>
+    <Typography
+      component={"div"}
+      className={`${classes.wrapper} ${errMsg ? classes.errWrapper : ""}`}
+    >
       <TextField
         label={label}
         placeholder={placeholder}
