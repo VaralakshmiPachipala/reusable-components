@@ -5,6 +5,8 @@ import { DatePickerWrapper } from './wrappers/DatePickerWrapper';
 import { InputNumberWrapper } from './wrappers/InputNumberWrapper';
 import { InputTextWrapper } from './wrappers/InputTextWrapper';
 import { CheckboxWrapper } from "./wrappers/CheckboxWrapper";
+import { DropdownSelectWrapper } from './wrappers/SelectWrapper';
+import { MultipleSelectWrapper } from './wrappers/MultipleSelectWrapper';
 
 const App = () => {
   return (
@@ -22,6 +24,12 @@ const App = () => {
           <li>
           <Link to="/checkbox">Checkbox</Link>
         </li>
+        <li>
+          <Link to="/select">Select</Link>
+        </li>
+        <li>
+          <Link to="/multipleSelect">Multiple Select</Link>
+        </li>
         </ul>
         <Routes>
           <Route path='/' element={<InputTextWrapper />}></Route>
@@ -29,6 +37,8 @@ const App = () => {
           <Route path='/number' element={<InputNumberWrapper />}></Route>
           <Route path='/datePicker' element={<DatePickerWrapper />}></Route>
           <Route path="/checkbox" element={<CheckboxWrapper />}></Route>
+        <Route path="/select" element={<DropdownSelectWrapper/>}></Route>
+        <Route path="/multipleSelect" element={<MultipleSelectWrapper/>} ></Route>
         </Routes>
       </div>
   );
