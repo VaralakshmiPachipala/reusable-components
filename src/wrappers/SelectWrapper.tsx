@@ -9,15 +9,18 @@ const country = [
 
 export const DropdownSelectWrapper = () => {
   const [countries, setCountries] = useState("");
-  const handleChange = (event: React.ChangeEvent<{value: string}>) => {
+  const onChange = (event: any) => {
     setCountries(event.target.value);
   };
 
   return (
     <DropdownSelect
+      label="Countries"
       dropdownOptions={country}
-      countries={countries}
-      handleChange={handleChange}
+      value={countries}
+      onChange={onChange}
+      variant="outlined"
+      validateOnFocusOut={true}
     />
   );
 };
