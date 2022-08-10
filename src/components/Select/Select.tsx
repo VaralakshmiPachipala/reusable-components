@@ -8,6 +8,7 @@ import {
   SelectChangeEvent,
 } from "@mui/material";
 import { makeStyles } from "@mui/styles";
+import { ErrorMessages } from "../../constants";
 
 const useStyles: any = makeStyles(() => ({
   errMsgStyle: {
@@ -43,7 +44,7 @@ export const DropdownSelect = (props: DropdownProps) => {
     let message = "";
     if (validateOnFocusOut) {
       if (value === "") {
-        message = "Select any one option";
+        message = ErrorMessages.selectErrorMsg;
         setErr(true);
       } else if(value.length === 1 ) {
         setErr(false)

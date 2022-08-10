@@ -11,6 +11,7 @@ import {
   SelectChangeEvent,
 } from "@mui/material";
 import { makeStyles } from "@mui/styles";
+import { ErrorMessages } from "../../constants";
 
 const useStyles: any = makeStyles(() => ({
   errMsgStyle: {
@@ -58,10 +59,10 @@ export const MultipleDropdownSelect = (props: DropdownProps) => {
   const onBlur = () => {
     let message = "";
     if (validateOnFocusOut) {
-      if (value.length <= 1) {
+      if (value.length <= 0) {
         setErr(true);
-        message = "Select morethan one option";
-      } else if (value.length > 1) {
+        message = ErrorMessages.multipleSelectErrorMsg;
+      } else if (value.length > 0) {
         setErr(false);
       } else {
         setErr(false);
