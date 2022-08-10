@@ -12,14 +12,18 @@ const countries = [
 export const MultipleSelectWrapper = () => {
   const [country, setCountry] = useState([]);
 
-  const handleChange = (event: any) => {
+  const onChange = (event: any) => {
     setCountry(event.target.value);
   };
   return (
     <MultipleDropdownSelect
       dropdownOptions={countries}
-      country={country}
-      handleChange={handleChange}
+      value={country}
+      onChange={onChange}
+      variant="outlined"
+      label="Countries"
+      validateOnFocusOut={true}
+      checkBox={true}
     />
   );
 };
