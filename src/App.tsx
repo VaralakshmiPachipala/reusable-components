@@ -7,6 +7,7 @@ import { InputTextWrapper } from "./wrappers/InputTextWrapper";
 import { CheckboxWrapper } from "./wrappers/CheckboxWrapper";
 import { DropdownSelectWrapper } from "./wrappers/SelectWrapper";
 import { MultipleSelectWrapper } from "./wrappers/MultipleSelectWrapper";
+import { RadioGroupWrapper } from "./wrappers/RadioGroupWrapper";
 
 const App = () => {
   return (
@@ -30,6 +31,9 @@ const App = () => {
         <li>
           <Link to="/multipleSelect">Multiple Select</Link>
         </li>
+        <li>
+          <Link to="/radioGroup">Radio Group</Link>
+        </li>
       </ul>
       <Routes>
         <Route path="/" element={<InputTextWrapper />}></Route>
@@ -42,6 +46,7 @@ const App = () => {
           path="/multipleSelect"
           element={<MultipleSelectWrapper />}
         ></Route>
+        <Route path="/radioGroup" element={<RadioGroupWrapper />}></Route>
       </Routes>
     </div>
   );

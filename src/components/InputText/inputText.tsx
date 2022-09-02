@@ -81,14 +81,10 @@ export const InputText = (props: TextProps) => {
   const onBlur = () => {
     let message = "";
     if (validateOnFocusOut) {
-      if (minLength) {
-        if (value.length < minLength) {
+      if (minLength && (value.length < minLength)) {
           message = ErrorMessages.minValidationMsg(minLength);
-        }
-      } else if (maxLength) {
-        if (value.length > maxLength) {
+      } else if (maxLength && (value.length > maxLength)) {
           message = ErrorMessages.maxValidationMsg(maxLength);
-        }
       }
       setErrMsg(message);
     }
